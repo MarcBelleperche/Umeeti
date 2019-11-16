@@ -1,0 +1,208 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background: black;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: -1;
+}
+
+.text-box {
+  font-size: 60px;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 7px;
+  word-spacing: 12px;
+  text-transform: uppercase;
+  overflow: hidden;
+  color:rgb(238, 238, 238);
+}
+
+
+.titlesite{
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  position: relative;
+  animation-delay: 20s;
+  animation: text 3s 1;
+}
+
+.whiteline{
+  width: 40%;
+  height: 8px;
+  animation-delay: 20s;
+  background-color: white;
+  animation: showing 3s 1;
+}
+
+@keyframes showing{
+
+  0%{
+    opacity: 0;
+  }
+
+  86%{
+    opacity: 1;
+  }
+}
+
+
+.sousTitre{
+   font-size: 30px;
+   position: absolute;
+   font-weight: 700;
+   color: white;
+   opacity: 0 !important; 
+   transition: 2s;
+   transform: translateY(10px);
+}
+
+.s1{
+  animation: roll 10s  4S   infinite;
+}
+
+.s2{
+    animation: roll 10s  5S infinite;
+}
+
+.s3{
+    animation: roll 10s  6S infinite;
+}
+
+.s4{
+    animation: roll 10s  7S infinite;
+}
+
+.s5{
+    animation: roll 10s  8S infinite;
+}
+
+.s6{
+    animation: roll 10s  9S infinite;
+}
+
+.signature{
+  margin-left: 43%;
+  margin-top: 6%;
+  overflow: hidden;
+  display: block;
+  width: 190px;
+  height: 30px;
+  cursor: pointer;
+  color: white;
+  background-color: white;
+  opacity: 1;
+  animation-delay: 20s;
+  animation : unroll 6s 0s;
+}
+
+.textee{
+  margin-top: 5px;
+  margin-left: 5px;
+  position: absolute;
+  color: black;
+  font-family: 'Raleway';
+  font-size: 16px;
+  font-weight: 500;
+
+}
+@keyframes unroll{
+  
+  0%{
+    opacity: 0;
+    width: 0px;
+  }
+
+  50%{
+    opacity: 1;
+    width: 0px;
+  }
+}
+
+@keyframes text{
+  0%{
+    margin-bottom: -10%;
+  }
+
+  30%{
+    letter-spacing: 15px;
+    margin-bottom: -10%;
+  }
+
+  85%{
+    letter-spacing: 8px;
+    margin-bottom: -10%;
+  }
+}
+
+
+@keyframes roll{
+    1%{
+        opacity: 1;
+    }
+
+    5%{
+      opacity: 1;
+    }
+
+    8%{
+        opacity: 0;
+    }
+}
+
+
+.crawl {
+    /* centrage de l'élément' */
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    width: 800px;
+    margin: 0 0 0 -400px;
+    top: auto;
+    bottom: 0;
+    height: 50em;
+    /* cosmétique */
+    color: white;    
+    font-size: 64px;
+    text-align: justify;
+    /* Applique la transformation  */
+    transform-origin: center bottom;
+    transform: perspective(400px) rotateX(25deg);
+}
+
+.crawl > div {
+    /* positionne la div en bas de l'écran (non visible) */
+    /* l'animation la fait remonter progressivement */
+    position: absolute;
+    top: 100%; 
+/*    animation-delay: 2s;*/ /* Démarre l'animation après la première */
+    animation-duration: 20s;
+    animation-name: crawl;
+    animation-timing-function: linear;
+}
+
+@keyframes crawl {
+    0% {
+        top: 100%;
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1; /* disparition progressive à la fin */
+    }
+
+    100% {
+        top: 0;
+        opacity: 0;
+    }
+}
+
