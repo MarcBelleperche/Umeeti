@@ -37,7 +37,11 @@ body {
     font-family: "Lato", sans-serif;
 }
 
-
+.bottom{
+  left : 90%;
+  color: black;
+  background-color: black;
+}
 
 .main-head{
     height: 150px;
@@ -69,6 +73,10 @@ body {
     .register-form{
         margin-top: 10%;
     }
+
+    .login-form2{
+      margin-top: 10%;
+    }
 }
 
 @media screen and (min-width: 768px){
@@ -88,6 +96,10 @@ body {
         margin-top: 80%;
     }
 
+    .login-form2{
+        margin-top: 20%;
+    }
+
     .register-form{
         margin-top: 20%;
     }
@@ -95,18 +107,23 @@ body {
 
 
 .login-main-text{
-    margin-top: 20%;
+  margin-left: 12.5%;
+    margin-top: 35%;
     padding: 60px;
     color: #fff;
 }
 
 .login-main-text h2{
-    font-weight: 300;
+    font-weight: bold;
 }
 
 
 .text-colored{
     color: #00C8FF !important;
+}
+
+.h2, h2{
+  font-size: 5rem !important;
 }
 
 .btn-clr {
