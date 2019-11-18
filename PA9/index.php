@@ -84,8 +84,9 @@
           <div class="col-md-7 order-md-2">
             <h2 class="featurette-heading">How does it work ? <span class="text-muted text-colored">Become a user</span></h2>
             <p class="lead">You simply have to create your account with the hotel name, and your name. Get in touch with all the other person of the hostel and discorver all his activities.</p>
-            <p><a class="btn btn-lg btn-clr" href="#Discover" role="button">Subscribe</a></p>
-
+            <form method="POST" action="suscribe.php">
+            <p><button class="btn btn-lg btn-clr" href="" type="submit" role="button">Subscribe</button></p>
+          </form>
           </div>
           <div class="col-md-5 order-md-1">
             <img class="featurette-image img-fluid mx-auto" src="" data-src="holder.js/500x500/auto" alt="Generic placeholder image">

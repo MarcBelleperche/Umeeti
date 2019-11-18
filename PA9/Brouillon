@@ -1,0 +1,24 @@
+Brouillon : 
+  <!-- IF LOG GET THE INITIAL AND PRINT IT IN THE BUTTON -->
+          
+          <?php 
+          if (isset($_SESSION['Log']) && isset($_SESSION['UserPrenom'])) 
+          {
+          $initial = substr($_SESSION['UserPrenom'], 0, 1);
+          ?>
+          <form class="form-inline mt-2 mt-md-0" action="MyProfil.php" method="POST">
+            <button class="btn btn-outline-success my-2 my-sm-0" id="cercle" type="submit" value="<?php echo($variable); ?>">M</button>
+          </form>
+        <?php 
+          }
+          else 
+          {
+            ?>
+             <!--  IF NOT LOGED IN  -->
+
+            <form class="form-inline mt-2 mt-md-0" action="login.php">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign in</button>
+          </form>
+          <?php 
+          }
+          ?>
