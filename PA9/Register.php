@@ -88,7 +88,7 @@ require "header.php"
                 	</div> 
                   <div class="form-group">
                      <label>First Name</label>
-                     <input type="text" class="form-control" placeholder="First Name" name="prenom" required autofocus>
+                     <input type="text" class="form-control" placeholder="First Name" name="prenom" title="Only simple characters (a to z)" required autofocus>
                   </div>
                   <div class="form-group">
                      <label>Last Name</label>
@@ -101,7 +101,7 @@ require "header.php"
 -->                  
                   <div class="form-group">
                      <label>Email adress</label>
-                     <input type="mail" class="form-control" placeholder="Email adress" name="Login" required>
+                     <input type="email" class="form-control" placeholder="Email adress" name="Login" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
                   </div>
                   <div class="form-group">
                      <label>Password</label>
@@ -114,6 +114,28 @@ require "header.php"
                   <button type="submit" class="btn btn-clr">Register</button>
                </form>
             </div>
+            <?php
+            if(isset($_SESSION['Succes'] ))
+            {
+              ?> <div class=" mt-4 alert alert-success" role="alert">Felicitation ! Vous êtes à présent inscris, veuillez vous <a href="Login.php">connecter</a>.</div> <?php
+              unset($_SESSION['Succes']);
+            }
+            if(isset($_SESSION['LoginNonDispo']))
+            {
+            	?> <div class=" mt-4 alert alert-danger" role="alert">L'adresse email est déjà utilisée, veuillez en saisir une autre.</div> <?php
+            	unset($_SESSION['LoginNonDispo']);
+            }
+            else if (isset($_SESSION['mdpNonConforme']))
+            {
+            	?> <div class=" mt-4 alert alert-danger" role="alert">Le mot de passe n'est pas conforme.</div> <?php
+            	unset($_SESSION['mdpNonConforme']);
+            }
+            else if(isset($_SESSION['mdpDifferent']))
+            {
+            	?> <div class=" mt-4 alert alert-danger" role="alert">Les mots de passe ne se correspondent pas, veuillez reessayer.</div> <?php
+            	unset($_SESSION['mdpDifferent']);
+            }
+            ?>
          </div>
       </div>
 </body>

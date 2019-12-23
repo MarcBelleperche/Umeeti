@@ -31,15 +31,29 @@
 			}
 			else
 			{
-				$tempo_user = $_SESSION['UserIDs'];
-				$tempo = $resultat['ReservationID'];
+				if($resultat['Flag'] == 1)
+				{
+					$_SESSION['ReservationFail'] = 1; 
+				}
 
-				$requete = $bdd->prepare('UPDATE user SET UserReservationID = ? WHERE UserID = ?'); // Insertion des données dans la bdd
-				$requete->execute(array($tempo,$tempo_user));
-				$requete->closeCursor();
+				else
+				{
+					$tempo_user = $_SESSION['UserIDs'];
+					$tempo = $resultat['ReservationID'];
 
-				$_SESSION['AccesMenu'] = 1;
-				header('Location: Menu.php');
+					$requete = $bdd->prepare('UPDATE user SET UserReservationID = ? WHERE UserID = ?'); // Insertion des données dans la bdd
+					$requete->execute(array($tempo,$tempo_user));
+					$requete->closeCursor();
+
+					$requete_deux = $bdd->prepare('UPDATE novotel SET Flag = 1 WHERE ReservationID = ?');
+					$requete_deux->execute(array($tempoResa));
+					$requete_deux->closeCursor();
+
+					$_SESSION['VerifResa'] = $tempo;
+					$_SESSION['AccesMenu'] = 1;
+					header('Location: Menu.php');			
+				}
+
 			} 
 		}	
 	}

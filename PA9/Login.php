@@ -59,7 +59,6 @@
 
 	<link href="style/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="style/style.css" rel="stylesheet">
-
     <script type="text/javascript" src="style/Bootstrap/js/bootstrap.min.js"></script>
 </head>
 <?php 
@@ -86,6 +85,14 @@ require "header.php"
                   <button type="submit" class="btn btn-clr">Login</button>
                </form>
             </div>
+            <?php 
+            if(isset($_SESSION['LoginFail']))
+            {?>
+            	<div class=" mt-4 alert alert-danger" role="alert">Identifiants incorrectes, veuillez essayer à nouveau.</div>
+            <?php
+           		unset($_SESSION['LoginFail']);
+            }
+             ?>
          </div>
       </div>
 </body>
